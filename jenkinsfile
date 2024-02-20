@@ -16,6 +16,13 @@ pipeline {
                 }
             }
         }
+        stage ('Gamma Stage'){
+            steps{
+                withMaven(maven: 'maven_3_9_6'){
+                    sh 'mvn test'
+                }
+            }
+        }
         stage ('Production Stage'){
             steps{
                 withMaven(maven: 'maven_3_9_6'){
