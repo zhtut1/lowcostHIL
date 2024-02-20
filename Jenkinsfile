@@ -5,28 +5,28 @@ pipeline {
         stage ('Alpha Stage'){
             steps{
                 withMaven(maven: 'maven_3_9_6'){
-                    sh 'mvn clean compile'
+                    bat 'mvn clean compile'
                 }
             }
         }
         stage ('Beta Stage'){
             steps{
                 withMaven(maven: 'maven_3_9_6'){
-                    sh 'mvn test'
+                    bat 'mvn test'
                 }
             }
         }
         stage ('Gamma Stage'){
             steps{
                 withMaven(maven: 'maven_3_9_6'){
-                    sh 'mvn test'
+                    bat 'mvn test'
                 }
             }
         }
         stage ('Production Stage'){
             steps{
                 withMaven(maven: 'maven_3_9_6'){
-                    sh 'mvn deploy'
+                    bat 'mvn deploy'
                 }
             }
         }
